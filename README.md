@@ -32,4 +32,43 @@ To develop a vision-based quality control system capable of identifying surface 
 ---
 
 ## 🗂️ Folder Structure
+steel-surface-defect-detector/
+├── data/ # Raw and processed dataset
+├── notebooks/ # Jupyter notebooks for exploration and modeling
+├── src/ # Python modules (models, preprocessing, utils)
+├── models/ # Trained model files
+├── results/ # Output images, evaluation results
+├── streamlit_app/ # Dashboard code (Phase 8)
+├── requirements.txt
+├── README.md
 
+---
+
+## 📊 Dataset
+
+Using the [NEU Surface Defect Database](https://github.com/abin24/Surface-Defect-Detection), which includes:
+- **6 types of steel defects**: Crazing, Inclusion, Patches, Pitted Surface, Rolled-in Scale, Scratches
+- ~1,800 grayscale images (200 per class)
+
+---
+
+## ⚙️ Tech Stack
+
+- **Languages:** Python
+- **Libraries:** OpenCV, PyTorch, scikit-learn, NumPy, Matplotlib, Pillow
+- **DL Models:** CNN, U-Net, Autoencoder
+- **Tools:** Jupyter, Streamlit, Git, GitHub
+
+---
+
+## 📦 Installation
+
+```bash
+git clone https://github.com/YOUR_USERNAME/steel-surface-defect-detector.git
+cd steel-surface-defect-detector
+pip install -r requirements.txt
+
+👤 Author
+Akshat
+M.Sc. Student in Germany | Mechanical + Machine Vision
+Seeking internship opportunities in Computer Vision and AI
