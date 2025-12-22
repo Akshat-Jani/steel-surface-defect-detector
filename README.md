@@ -1,112 +1,161 @@
 # Steel Surface Defect Detection System
 
-An end-to-end computer vision system that detects defects in steel surfaces using Convolutional Neural Networks and transfer learning (MobileNetV2).  
-Built for real-world industrial quality control, with a live prediction web app using Streamlit.
+An end-to-end **industrial computer vision inspection system** built around a **two-stage anomaly-first pipeline**:
+Autoencoder-based anomaly detection → CNN-based defect classification → visual explainability → interactive Streamlit dashboard.
 
 ---
 
-##  Sample Outputs
+## 🔍 System Overview (High-Level)
 
-| Training Curves | Confusion Matrix | Real-world Prediction |
-|-----------------|------------------|------------------------|
-| ![training](results/training_curves.png) | ![cm](results/confusion_matrix.png) | ![predict](results/real_prediction.png) |
+![System Overview](assets/banner/system_overview.png)
 
----
+**Pipeline Flow**  
+Raw steel image → Anomaly Detection → Defect Classification → Explainability → Operator Dashboard
 
-## Live App (Optional)
-
-> 🔗 *[Add link here if deployed]*  
-> Upload a steel surface image and get instant predictions with confidence levels.
+This system is designed to simulate a real-world industrial quality control workflow.
 
 ---
 
-## Project Highlights
+## 🧠 System Architecture
 
-- ✅ Used **NEU Surface Defect Dataset** (6-class industrial dataset)
-- ✅ Built a baseline **CNN model from scratch**
-- ✅ Improved accuracy using **MobileNetV2** with **transfer learning**
-- ✅ Achieved **96.4% validation accuracy**
-- ✅ Tested on real-world, external images
-- ✅ Built a working **Streamlit web app** for live predictions
-- ✅ Handled edge cases like **RGBA input**, image resizing, and class mapping
-- ✅ Trained models and saved training history for reproducibility
+### Overall Pipeline Architecture
+![Pipeline Architecture](assets/architecture/pipeline_diagram.png)
+
+**Explanation**
+- Autoencoder learns normal steel texture using defect-free samples only  
+- Reconstruction error is used as an anomaly score  
+- Only anomalous samples are forwarded to the classifier  
+- CNN predicts defect category  
+- Grad-CAM visualizes regions influencing the prediction  
 
 ---
 
-## Folder Structure
+### Module-Level Structure
+![Module Structure](assets/architecture/module_structure.png)
+
+**Explanation**
+- Clear separation of anomaly detection, classification, explainability, and UI  
+- Modular design for training, inference, and visualization  
+
+---
+
+## 📊 Model Training & Evaluation Results
+
+### 1️⃣ CNN Training Behavior
+![Training Curves](results/training_curves.png)
+
+Shows convergence behavior and training stability.
+
+---
+
+### 2️⃣ Defect Classification Performance
+![Confusion Matrix](results/confusion_matrix.png)
+
+Demonstrates class-wise performance across industrial defect categories.
+
+---
+
+### 3️⃣ Anomaly Detection Behavior (Autoencoder)
+![Anomaly Scores](results/anomaly_scores.png)
+
+Clear separation between normal and defective samples using reconstruction error.
+
+---
+
+### 4️⃣ Model Explainability (Grad-CAM)
+![Grad-CAM Example](results/gradcam_example.png)
+
+Verifies that the CNN focuses on defect-relevant regions.
+
+---
+
+## 🖥️ Interactive Streamlit Dashboard
+
+### 1️⃣ Dashboard Home & Image Upload
+![Dashboard Upload](assets/dashboard/upload_screen.png)
+
+User uploads steel surface images for inspection.
+
+---
+
+### 2️⃣ Anomaly Detection Output
+![Dashboard Anomaly](assets/dashboard/anomaly_detection_view.png)
+
+Displays anomaly score and normal/anomalous decision.
+
+---
+
+### 3️⃣ Defect Classification Result
+![Dashboard Classification](assets/dashboard/classification_result.png)
+
+Shows predicted defect class and confidence scores.
+
+---
+
+### 4️⃣ Explainability View (Grad-CAM)
+![Dashboard GradCAM](assets/dashboard/gradcam_overlay.png)
+
+Visual justification of CNN decision for operator trust.
+
+---
+
+### 📄 Complete Dashboard Walkthrough
+See full walkthrough PDF:
+docs/streamlit_dashboard_demo.pdf
+
+---
+
+## ⭐ Key Project Highlights
+
+- Two-stage anomaly-first inspection pipeline  
+- Autoencoder-based unsupervised anomaly detection  
+- MobileNetV2 transfer learning for defect classification  
+- Grad-CAM explainability integration  
+- Interactive Streamlit dashboard  
+- Modular, production-style project structure  
+
+---
+
+## 📁 Project Structure
+
+```
 steel-surface-defect-detector/
+├── anomaly_detection/
+├── defect_classification/
+├── explainability/
+├── streamlit_app/
 ├── data/
-│ ├── raw/ # Original NEU dataset
-│ └── processed/ # Augmented, resized, and split images
-├── models/ # Trained CNN and MobileNetV2 models (.keras)
-│ # + training history (.pkl)
-├── results/ # Plots, confusion matrix, predictions
-├── streamlit_app/ # Streamlit frontend
-│ └── app.py
-├── notebook.ipynb # Full training + evaluation notebook
-├── requirements.txt # All dependencies
-└── README.md # This file
-
----
-
-## Installation
-
-```bash
-git clone https://github.com/yourusername/steel-surface-defect-detector.git
-cd steel-surface-defect-detector
-pip install -r requirements.txt
+├── models/        # not tracked (large files)
+├── results/
+├── assets/
+│   ├── banner/
+│   ├── architecture/
+│   └── dashboard/
+├── docs/
+├── README.md
+└── LICENSE
 ```
 
 ---
 
-## Run the Streamlit App
-cd streamlit_app
-streamlit run app.py
+## 🧠 Key Design Decisions
+
+- Anomaly-first filtering to reduce false positives  
+- Autoencoder chosen to avoid exhaustive defect labeling  
+- Grad-CAM used for interpretability, not decision logic  
+- UI separated from model logic  
+- Model binaries excluded to keep repository lightweight  
 
 ---
 
-## Technologies Used
+## 🛠️ Technologies Used
 
-- TensorFlow / Keras
-- CNNs & Transfer Learning (MobileNetV2)
-- Data Augmentation (ImageDataGenerator)
-- Matplotlib & Seaborn
-- Streamlit
-- NumPy, OpenCV, Pillow
-- Scikit-learn for evaluation
+TensorFlow · Keras · Autoencoders · CNNs · MobileNetV2 · Grad-CAM · OpenCV · Streamlit · NumPy · Matplotlib · Scikit-learn
 
 ---
 
-## Skills Demonstrated
+## 👤 Author
 
-- Deep Learning & model building from scratch
-- Transfer learning & fine-tuning
-- Model evaluation & confusion matrix analysis
-- Real-time inference with web interface
-- Data preprocessing & pipeline design
-- GitHub project structuring
-- Visual storytelling with Streamlit + plots
-
----
-
-## Dataset
-
-- NEU Surface Defect Database (SDD)
-- 6 classes: crazing, inclusion, patches, pitted surface, rolled-in scale, scratches
-
----
-
-## Future Improvements
-
-- Add Grad-CAM heatmap for interpretability
-- Train on larger datasets for better generalization
-- Deploy app to HuggingFace Spaces or Streamlit Cloud
-
---- 
-
-## Author
-🔗 Akshat Jani
-
-📧 akshatjani108@gmail.com
-
-💼 Master's student in Mechatronics @ University of Siegen
+**Akshat Jani**  
+M.Sc. Mechatronics — University of Siegen  
+Focus: Computer Vision · Industrial AI · Robotics
