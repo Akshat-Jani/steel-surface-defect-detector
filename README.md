@@ -55,14 +55,7 @@ Demonstrates class-wise performance across industrial defect categories.
 
 ---
 
-### 3️⃣ Anomaly Detection Behavior (Autoencoder)
-![Anomaly Scores](results/anomaly_scores.png)
-
-Clear separation between normal and defective samples using reconstruction error.
-
----
-
-### 4️⃣ Model Explainability (Grad-CAM)
+### 3️⃣ Model Explainability (Grad-CAM)
 ![Grad-CAM Example](results_%26_assets/gradcam_output.png)
 
 Verifies that the CNN focuses on defect-relevant regions. Given Image: "Scratch" on a steel surface
@@ -78,22 +71,15 @@ User uploads steel surface images for inspection.
 
 ---
 
-### 2️⃣ Anomaly Detection Output
-![Dashboard Anomaly](assets/dashboard/anomaly_detection_view.png)
+### 2️⃣ Anomaly Detection Output & Defect Classification Result
+![Dashboard Anomaly](results_%26_assets/Streamlit_Anomaly_Classification.png)
 
-Displays anomaly score and normal/anomalous decision.
-
----
-
-### 3️⃣ Defect Classification Result
-![Dashboard Classification](assets/dashboard/classification_result.png)
-
-Shows predicted defect class and confidence scores.
+Displays anomaly score, normal/anomalous decision, predicted defect class, and confidence scores.
 
 ---
 
-### 4️⃣ Explainability View (Grad-CAM)
-![Dashboard GradCAM](assets/dashboard/gradcam_overlay.png)
+### 3️⃣ Explainability View (Grad-CAM)
+![Dashboard GradCAM](assets/dashboard/Streamlit_Grad_CAM.png)
 
 Visual justification of CNN decision for operator trust.
 
@@ -126,11 +112,7 @@ steel-surface-defect-detector/
 ├── streamlit_app/
 ├── data/
 ├── models/        # not tracked (large files)
-├── results/
-├── assets/
-│   ├── banner/
-│   ├── architecture/
-│   └── dashboard/
+├── results_&_assets/
 ├── docs/
 ├── README.md
 └── LICENSE
