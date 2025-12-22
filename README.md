@@ -19,7 +19,7 @@ This system is designed to simulate a real-world industrial quality control work
 ## 🧠 System Architecture
 
 ### Overall Pipeline Architecture
-![Pipeline Architecture](results_%26_assets/Pipeline_Architecture.png)
+![Pipeline Architecture](results_%26_assets/Pipeline_Architecture.PNG)
 
 **Explanation**
 - Autoencoder learns normal steel texture using defect-free samples only  
@@ -65,7 +65,7 @@ Clear separation between normal and defective samples using reconstruction error
 ### 4️⃣ Model Explainability (Grad-CAM)
 ![Grad-CAM Example](results_%26_assets/gradcam_output.png)
 
-Verifies that the CNN focuses on defect-relevant regions.
+Verifies that the CNN focuses on defect-relevant regions. Given Image: "Scratch" on a steel surface
 
 ---
 
