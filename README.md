@@ -79,15 +79,9 @@ Displays anomaly score, normal/anomalous decision, predicted defect class, and c
 ---
 
 ### 3️⃣ Explainability View (Grad-CAM)
-![Dashboard GradCAM](assets/dashboard/Streamlit_Grad_CAM.png)
+![Dashboard GradCAM]((results_%26_assets/Streamlit_Grad_CAM.png)
 
 Visual justification of CNN decision for operator trust.
-
----
-
-### 📄 Complete Dashboard Walkthrough
-See full walkthrough PDF:
-docs/streamlit_dashboard_demo.pdf
 
 ---
 
