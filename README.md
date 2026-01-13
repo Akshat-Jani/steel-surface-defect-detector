@@ -72,7 +72,7 @@ User uploads steel surface images for inspection.
 ---
 
 ### 2️⃣ Anomaly Detection Output & Defect Classification Result
-![Dashboard Anomaly](results_%26_assets/Streamlit_Anomaly_Classification.png)
+![Dashboard Anomaly](results_%26_assets/Streamlit_Anomaly_Classification(1).png)
 
 Displays anomaly score, normal/anomalous decision, predicted defect class, and confidence scores.
 
