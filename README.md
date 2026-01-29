@@ -7,7 +7,7 @@ Autoencoder-based anomaly detection → CNN-based defect classification → visu
 
 ## 🔍 System Overview (High-Level)
 
-![System Overview](assets/banner/system_overview.png)
+![System Overview](results_%26_assets/System_Overview.PNG)
 
 **Pipeline Flow**  
 Raw steel image → Anomaly Detection → Defect Classification → Explainability → Operator Dashboard
@@ -19,7 +19,7 @@ This system is designed to simulate a real-world industrial quality control work
 ## 🧠 System Architecture
 
 ### Overall Pipeline Architecture
-![Pipeline Architecture](assets/architecture/pipeline_diagram.png)
+![Pipeline Architecture](results_%26_assets/Pipeline_Architecture.PNG)
 
 **Explanation**
 - Autoencoder learns normal steel texture using defect-free samples only  
@@ -31,7 +31,7 @@ This system is designed to simulate a real-world industrial quality control work
 ---
 
 ### Module-Level Structure
-![Module Structure](assets/architecture/module_structure.png)
+![Module Structure](results_%26_assets/Structure.PNG)
 
 **Explanation**
 - Clear separation of anomaly detection, classification, explainability, and UI  
@@ -42,28 +42,21 @@ This system is designed to simulate a real-world industrial quality control work
 ## 📊 Model Training & Evaluation Results
 
 ### 1️⃣ CNN Training Behavior
-![Training Curves](results/training_curves.png)
+![Training Curves](results_%26_assets/training_curves.png)
 
 Shows convergence behavior and training stability.
 
 ---
 
 ### 2️⃣ Defect Classification Performance
-![Confusion Matrix](results/confusion_matrix.png)
+![Confusion Matrix](results_%26_assets/confusion_matrix.png)
 
 Demonstrates class-wise performance across industrial defect categories.
 
 ---
 
-### 3️⃣ Anomaly Detection Behavior (Autoencoder)
-![Anomaly Scores](results/anomaly_scores.png)
-
-Clear separation between normal and defective samples using reconstruction error.
-
----
-
-### 4️⃣ Model Explainability (Grad-CAM)
-![Grad-CAM Example](results/gradcam_example.png)
+### 3️⃣ Model Explainability (Grad-CAM)
+![Grad-CAM Example](resultss_%26_assets/gradcam_example.png)
 
 Verifies that the CNN focuses on defect-relevant regions.
 
@@ -72,38 +65,26 @@ Verifies that the CNN focuses on defect-relevant regions.
 ## 🖥️ Interactive Streamlit Dashboard
 
 ### 1️⃣ Dashboard Home & Image Upload
-![Dashboard Upload](assets/dashboard/upload_screen.png)
+![Dashboard Upload](results_%26_assets/Streamlit_Upload.png)
 
 User uploads steel surface images for inspection.
 
 ---
 
-### 2️⃣ Anomaly Detection Output
-![Dashboard Anomaly](assets/dashboard/anomaly_detection_view.png)
+### 2️⃣ Defect Classification and Anomaly Detection Output 
+![Dashboard Anomaly](results_%26_assets/Streamlit_Anomaly_Classification(1).png)
 
-Displays anomaly score and normal/anomalous decision.
-
----
-
-### 3️⃣ Defect Classification Result
-![Dashboard Classification](assets/dashboard/classification_result.png)
-
-Shows predicted defect class and confidence scores.
+Displays anomaly score and normal/anomalous decision andShows predicted defect class and confidence scores.
 
 ---
 
-### 4️⃣ Explainability View (Grad-CAM)
+### 3️⃣ Explainability View (Grad-CAM)
 ![Dashboard GradCAM](assets/dashboard/gradcam_overlay.png)
 
 Visual justification of CNN decision for operator trust.
 
 ---
 
-### 📄 Complete Dashboard Walkthrough
-See full walkthrough PDF:
-docs/streamlit_dashboard_demo.pdf
-
----
 
 ## ⭐ Key Project Highlights
 
@@ -120,20 +101,27 @@ docs/streamlit_dashboard_demo.pdf
 
 ```
 steel-surface-defect-detector/
-├── anomaly_detection/
-├── defect_classification/
-├── explainability/
+├── src/
+│   └── defect_detector/
+│       ├── anomaly_detection/
+│       │
+│       ├── defect_classification/
+│       │
+│       ├── explainability/
+│
 ├── streamlit_app/
-├── data/
-├── models/        # not tracked (large files)
-├── results/
-├── assets/
-│   ├── banner/
-│   ├── architecture/
-│   └── dashboard/
-├── docs/
+│   └── app.py
+│
+├── results/              # outputs, plots, Streamlit screenshots
+│
+├── explainations/                 # Personal PDFs, reports, explanations
+│
+├── .gitignore
+├── pyproject.toml
+├── requirements.txt
 ├── README.md
 └── LICENSE
+
 ```
 
 ---
