@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "steel-surface-defect-detector"
+version = "0.1.0"
+description = "Industrial steel surface defect detection using anomaly detection, CNN classification, and explainability."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+
+authors = [
+  { name = "Akshat Jani" }
+]
+
+dependencies = [
+  "tensorflow>=2.12",
+  "numpy",
+  "opencv-python",
+  "matplotlib",
+  "scikit-learn",
+  "pillow",
+  "streamlit"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
